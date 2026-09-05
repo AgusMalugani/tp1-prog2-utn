@@ -1,0 +1,202 @@
+/* ------------------------------
+   RESET BÁSICO
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ------------------------------
+   HEADER + NAV
+------------------------------ */
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffcc00;
+  transition: 0.3s;
+}
+
+/* ------------------------------
+   HERO (HOME)
+------------------------------ */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ffcc00, #ff8800);
+  color: #222;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.hero .btn:hover {
+  background: #444;
+  transition: 0.3s;
+}
+
+/* ------------------------------
+   GRID DE PRODUCTOS
+------------------------------ */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+.producto-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.producto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.producto-card button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #ff8800;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.producto-card button:hover {
+  background: #ff6600;
+  transition: 0.3s;
+}
+
+/* ------------------------------
+   CARRITO
+------------------------------ */
+.carrito-container {
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.item button {
+  padding: 8px 12px;
+  background: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.item button:hover {
+  background: #444;
+}
+
+.total-container {
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* ------------------------------
+   FORMULARIO
+------------------------------ */
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+form button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #ff8800;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+form button:hover {
+  background: #ff6600;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  margin-top: 40px;
+}
