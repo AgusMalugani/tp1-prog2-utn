@@ -8,7 +8,7 @@ Ejemplo: Este es un sitio web interactivo desarrollado desde cero para exhibir u
 
 - **HTML:** Living Standard.
 - **CSS:** CSS Baseline 2026.
-- **JavaScript:** ES2026 (Vanilla JS puro, hecho 100% a mano sin frameworks).
+- **JavaScript:** ES2026 .
 
 ##  Estructura del proyecto
 

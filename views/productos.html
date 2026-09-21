@@ -1,77 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda 3D - Productos</title>
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda 3D - Productos</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/product.css" />
 
-<body>
-  <header>
-    <h1>Productos 3D</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="./productos.html">Productos</a></li>
-        <li><a href="./carrito.html">Carrito</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <style>
+      /* POPUP */
+.popup-carrito {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  text-align: center;
+  display: none;
+  z-index: 9999;
+  width: 320px;
+}
 
-  <main>
-    <h2>Catálogo</h2>
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
 
-    <div id="lista-productos" class="grid-productos">
+.btn-popup {
+  background: #6b9c6a;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
 
-      <!-- Producto 1 -->
-      <div class="producto-card">
-        <img src="../assets/images/porta_llave.jfif" alt="Llaveros 3D">
-        <h3>Llaveros Hexagonales 3D</h3>
-        <p>$2500</p>
-        <button onclick="agregarAlCarrito(1)">Agregar al carrito</button>
+.btn-popup:hover {
+  background: #426e4b;
+}
+
+    </style>
+
+  </head>
+
+  <body>
+
+    
+    <header class="header">
+      <nav class="navbar">
+        <a href="index.html" class="logo" aria-label="3uilD - Inicio">
+          3<span>u</span>ilD
+        </a>
+  
+        <div class="nav-links">
+          <a href="../index.html" class="active">Inicio</a>
+          <a href="./productos.html">Productos</a>
+          <a href="./carrito.html">Carrito</a>
+          <a href="./sobre-mi.html">Nosotros</a>
+          <a href="./login.html">Ingresar</a>
+        </div>
+      </nav>
+    </header> 
+
+    <!-- POPPUP -->
+    <div id="popup-carrito" class="popup-carrito">
+      <p>Producto agregado al carrito</p>
+
+      <div class="popup-buttons">
+        <button class="btn-popup" onclick="cerrarPopup()">Seguir comprando</button>
+        <button class="btn-popup" onclick="window.location.href='carrito.html'">Ir al carrito</button>
       </div>
-
-      <!-- Producto 2 -->
-      <div class="producto-card">
-        <img src="../assets/images/maceta_groot.jpeg" alt="Macetas 3D">
-        <h3>Macetas Figuritas 3D</h3>
-        <p>$6000</p>
-        <button onclick="agregarAlCarrito(2)">Agregar al carrito</button>
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="producto-card">
-        <img src="../assets/images/perro.jfif" alt="Perritos 3D">
-        <h3>Perritos Balloon 3D</h3>
-        <p>$8500</p>
-        <button onclick="agregarAlCarrito(3)">Agregar al carrito</button>
-      </div>
-
-      <!-- Producto 4 -->
-      <div class="producto-card">
-        <img src="../assets/images/porta_capsula.jfif" alt="Organizador Café">
-        <h3>Organizador Cápsulas Café</h3>
-        <p>$7000</p>
-        <button onclick="agregarAlCarrito(4)">Agregar al carrito</button>
-      </div>
-
-      <!-- Producto 5 -->
-      <div class="producto-card">
-        <img src="../assets/images/maceta_pareja.jfif" alt="Maceta pareja 3D">
-        <h3>Organizador Mario Bros</h3>
-        <p>$9000</p>
-        <button onclick="agregarAlCarrito(5)">Agregar al carrito</button>
-      </div>
-
     </div>
-  </main>
 
-  <footer>
-    <p>© 2026 Tienda 3D</p>
+    <main>
+      <h2>Productos</h2>
+
+      <section id="productos"></section>
+    </main>
+
+    
+  <footer class="footer">
+    <div class="footer-logo">3<span>u</span>ilD</div>
+    <p>Impresiones 3D que toman forma.</p>
+    <p class="copyright">© 2026 3uilD · Todos los derechos reservados</p>
   </footer>
 
-  <script src="../app.js"></script>
-</body>
+
+    <script>
+      const productos = [
+        {
+          id: 1,
+          nombre: "Maceta Groot",
+          imagen: "../assets/images/maceta1.jpeg",
+          precio: 100,
+        },
+        {
+          id: 2,
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta2.jpeg",
+          precio: 100,
+        },
+        {
+          id: 3,
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta3.jpeg",
+          precio: 100,
+        },
+        {
+          id: 4,
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta4.jpeg",
+          precio: 100,
+        },
+        {
+          id: 5,
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta5.jpeg",
+          precio: 100,
+        },
+        {
+          id: 6,
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta6.jpeg",
+          precio: 100,
+        },
+        {
+          id: 7,
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta7.jpeg",
+          precio: 100,
+        },
+        {
+          id: 8,
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta8.jpeg",
+          precio: 100,
+        },
+
+      ];
+
+      // guardamos la cantidad seleccionada de cada producto, por id
+      const cantidades = {};
+      productos.forEach((p) => (cantidades[p.id] = 1));
+
+      const section = document.getElementById("productos");
+
+      for (let i = 0; i < productos.length; i++) {
+        const product = productos[i];
+
+        const div = document.createElement("div");
+        div.classList.add("cont-prod");
+
+        const imgWrap = document.createElement("div");
+        imgWrap.classList.add("img-wrap");
+        const img = document.createElement("img");
+        img.src = product.imagen;
+        img.alt = product.nombre;
+        imgWrap.appendChild(img);
+
+        const h3 = document.createElement("h3");
+        h3.classList.add("nombre-prod");
+        h3.textContent = product.nombre;
+
+        const precioWrap = document.createElement("div");
+        precioWrap.classList.add("precio-wrap");
+        precioWrap.innerHTML = `<span class="label">Precio</span> <span class="precio">$${product.precio}</span>`;
+
+        // --- selector de cantidad ---
+        const cantidadWrap = document.createElement("div");
+        cantidadWrap.classList.add("cantidad-wrap");
+
+        const btnMenos = document.createElement("button");
+        btnMenos.classList.add("btn-cantidad");
+        btnMenos.textContent = "-";
+
+        const spanCantidad = document.createElement("span");
+        spanCantidad.classList.add("cantidad-num");
+        spanCantidad.textContent = cantidades[product.id];
+
+        const btnMas = document.createElement("button");
+        btnMas.classList.add("btn-cantidad");
+        btnMas.textContent = "+";
+
+        btnMenos.onclick = () => {
+          if (cantidades[product.id] > 1) {
+            cantidades[product.id]--;
+            spanCantidad.textContent = cantidades[product.id];
+          }
+        };
+
+        btnMas.onclick = () => {
+          cantidades[product.id]++;
+          spanCantidad.textContent = cantidades[product.id];
+        };
+
+        cantidadWrap.appendChild(btnMenos);
+        cantidadWrap.appendChild(spanCantidad);
+        cantidadWrap.appendChild(btnMas);
+        // --- fin selector de cantidad ---
+
+        const button = document.createElement("button");
+        button.classList.add("btn-carrito");
+        button.textContent = "Agregar al carrito";
+        button.onclick = () =>
+          agregarCarrito(product.id, cantidades[product.id]);
+
+        div.appendChild(imgWrap);
+        div.appendChild(h3);
+        div.appendChild(precioWrap);
+        div.appendChild(cantidadWrap);
+        div.appendChild(button);
+        section.appendChild(div);
+      }
+
+      function agregarCarrito(id, cantidad) {
+        console.log(`Producto ${id} - Cantidad: ${cantidad}`);
+      }
+
+      function agregarCarrito(id) {
+        document.getElementById("popup-carrito").style.display = "block";
+       }
+
+       function mostrarPopup() {
+        document.getElementById("popup-carrito").style.display = "block";
+      }
+
+
+
+
+
+
+
+
+      
+
+      function cerrarPopup() {
+        document.getElementById("popup-carrito").style.display = "none";
+      }
+
+
+
+
+      
+
+    </script>
+  </body>
 </html>

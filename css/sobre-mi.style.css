@@ -1,0 +1,233 @@
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+section h2 {
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#sectionQuienesSomos {
+  text-align: center;
+}
+
+#sectionQuienesSomos img {
+  width: min(100%, 500px) ;
+  margin: 10px auto 25px;
+  border-radius: 12px;
+  display: block;
+}
+
+#sectionQuienesSomos div {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#sectionQuienesSomos p {
+  margin-bottom: 18px;
+}
+
+#sectionQuienesSomos  a {
+  margin-top: 15px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff8800 ;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#sectionQuienesSomos  a:hover {
+  background-color: #ff6600 ;
+}
+
+
+/* ---------------- */
+
+#sectionEquipoTrabajo {
+  text-align: center;
+}
+
+#sectionEquipoTrabajo  p {
+  margin-bottom: 20px;
+  color: #b5b4b4;
+}
+
+#sectionEquipoTrabajo  div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#sectionEquipoTrabajo img {
+  border-radius: 50%;
+   width: 100px; 
+   margin: 20px"
+}
+
+.abrirModal {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  
+
+}
+
+.abrirModal img {
+  
+  width: 110px ;
+  height: 110px;
+  object-fit: cover;
+  margin: 10px ;
+  border: 4px solid transparent;
+  transition: transform 0.25s, border-color 0.25s;
+  border-radius: 50%;
+
+}
+
+.abrirModal:hover img {
+  transform: scale(1.08);
+  border-color: #ff8800;
+}
+
+/* dialog {
+  width: min(90%, 450px);
+  padding: 30px;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+} */
+
+dialog {
+  width: min(90%, 450px);
+  max-height: 80vh;
+  margin: auto;
+  padding: 30px;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+dialog h2 {
+  margin-bottom: 20px;
+}
+
+dialog h3 {
+  margin-bottom: 10px;
+  color: #ff6600;
+}
+
+dialog p {
+  margin-bottom: 25px;
+}
+
+#cerrarModal {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #222;
+  color: white;
+  cursor: pointer;
+}
+
+#cerrarModal:hover {
+  background-color: #444;
+}
+
+
+
+
+/* ------------- */
+
+#sectionContacto {
+  text-align: center;
+}
+
+#sectionContacto > div {
+  margin-top: 25px;
+}
+
+#sectionContacto iframe {
+  width: min(100%, 500px);
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    text-align: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  section {
+    padding: 25px 18px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  #sectionContacto iframe {
+    height: 280px;
+  }
+}
+
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.redes-sociales a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.redes-sociales a:hover {
+  transform: scale(1.12);
+  opacity: 0.85;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #feda75, #d62976, #4f5bd5);
+}
+
+.whatsapp {
+  background-color: #25d366;
+}
