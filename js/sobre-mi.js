@@ -2,32 +2,32 @@
         {
           id:1,
           nombre:"Agustin Malugani",
-          descripcion:"salkdjasdjasdl",
-          url_imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUDC8-I9qN4JKJ5BBSvGUN11nzWggCpRzwlZTEEtHnQA&s=10"
+          descripcion:"Desarrollo web y producto digital.",
+          url_imagen:"https://www.shutterstock.com/image-illustration/cute-3d-render-blue-little-260nw-2769495901.jpg"
         },
       {
           id:2,
           nombre:"Yael Ruiz",
-          descripcion:"salkdjasdjasdl",
-          url_imagen:""
+          descripcion:"Atención al cliente y ventas",
+          url_imagen:"https://www.shutterstock.com/image-illustration/cute-3d-render-orange-bot-260nw-2755023657.jpg"
         },
       {
           id:3,
           nombre:"Natalia Laverense",
-          descripcion:"salkdjasdjasdl",
-          url_imagen:""
+          descripcion:"Producción e impresión 3D",
+          url_imagen:"https://www.shutterstock.com/image-illustration/cute-3d-render-pink-monster-260nw-2745423743.jpg"
         },
       {
           id:4,
           nombre:"Pablo Abila",
-          descripcion:"salkdjasdjasdl",
-          url_imagen:""
+          descripcion:"Diseño 3D y modelado de piezas",
+          url_imagen:"https://www.shutterstock.com/image-illustration/cute-3d-render-little-red-260nw-2718392783.jpg"
         },
       {
           id:5,
           nombre:"Elias Roldan",
-          descripcion:"salkdjasdjasdl",
-          url_imagen:""
+          descripcion:"Fotografía y comunicación visua",
+          url_imagen:"https://www.shutterstock.com/image-illustration/cute-3d-render-green-horn-260nw-2785792745.jpg"
         }]
 
 
