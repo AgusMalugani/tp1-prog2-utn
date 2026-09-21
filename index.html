@@ -3,36 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda 3D - Inicio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="assets/icons/favicon.ico">
+  <meta name="description" content="3uilD - Impresiones 3D personalizadas. Diseños únicos para cada ocasión.">
+  <title>3uilD | Impresiones 3D</title>
+
+  <!-- icono -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <header>
-    <h1>Tienda 3D</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="./views/productos.html">Productos</a></li>
-        <li><a href="./views/carrito.html">Carrito</a></li>
-        <li><a href="./views/contacto.html">Contacto</a></li>
-        <li><a href="./views/sobre-mi.html">Sobre mí</a></li>
-      </ul>
+
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo" aria-label="3uilD - Inicio">
+        3<span>u</span>ilD
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="./views/productos.html">Productos</a>
+        <a href="./views/carrito.html">Carrito</a>
+        <a href="./views/sobre-mi.html">Nosotros</a>
+        <a href="./views/login.html">Ingresar</a>
+      </div>
     </nav>
   </header>
 
-  <main class="hero">
-    <h2>Accesorios, Figuras y Lámparas impresas en 3D</h2>
-    <p>Productos únicos, personalizados y fabricados con impresión 3D.</p>
-    <a class="btn" href="./views/productos.html">Ver catálogo</a>
+  <main>
 
-<p>Hola como estas</p>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">IMPRESIÓN 3D · DISEÑO · PERSONALIZACIÓN</p>
+
+        <h1>
+          Ideas que se
+          <span>hacen realidad.</span>
+        </h1>
+
+        <p class="hero-text">
+          Creamos objetos únicos mediante impresión 3D,
+          pensados para regalar, decorar, organizar
+          y darle forma a tus ideas.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="./views/productos.html" class="btn btn-primary">
+            Ver productos
+          </a>
+
+          <a href="./views/sobre-mi.html" class="btn btn-secondary">
+            Conocé 3uilD
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-decoration">
+        <div class="shape shape-one"></div>
+        <div class="shape shape-two"></div>
+        <div class="shape shape-three"></div>
+
+        <div class="hero-card">
+          <span>3D</span>
+          <p>ACA PONER FRUTA O UNA FOTO DE DECO 3D O LO VOLAMOS<br>ALALALAAAAA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="categories">
+      <div class="section-heading">
+        <p class="eyebrow">DESCUBRÍ 3uilD</p>
+        <h2>Un mundo de posibilidades</h2>
+        <p>
+          Desde pequeños detalles hasta objetos que transforman
+          tus espacios.
+        </p>
+      </div>
+
+      <div class="category-grid">
+
+        <article class="category-card">
+          <div class="category-icon">✦</div>
+          <h3>Para regalar</h3>
+          <p>
+            Detalles originales y personalizados para
+            sorprender en cualquier ocasión.
+          </p>
+        </article>
+
+        <article class="category-card featured">
+          <div class="category-icon">◇</div>
+          <h3>Para tu hogar</h3>
+          <p>
+            Decoración, organización y objetos funcionales
+            creados con diseño y personalidad.
+          </p>
+        </article>
+
+        <article class="category-card">
+          <div class="category-icon">○</div>
+          <h3>Personalizados</h3>
+          <p>
+            Tu idea, tu nombre, tus colores. Diseñamos
+            piezas especiales para vos.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FRASE -->
+    <section class="statement">
+      <div>
+        <p class="eyebrow">MÁS QUE UNA IMPRESIÓN</p>
+        <h2>
+          Porque cada objeto
+          <span>puede contar algo.</span>
+        </h2>
+      </div>
+
+      <a href="./views/productos.html" class="text-link">
+        Explorar productos <span>→</span>
+      </a>
+    </section>
 
   </main>
 
-  <footer>
-    <p>© 2026 Tienda 3D</p>
+  <footer class="footer">
+    <div class="footer-logo">3<span>u</span>ilD</div>
+    <p>Impresiones 3D que toman forma.</p>
+    <p class="copyright">© 2026 3uilD · Todos los derechos reservados</p>
   </footer>
+
 </body>
 </html>

@@ -5,231 +5,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda 3D - Productos</title>
     <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/product.css" />
+
+    <style>
+      /* POPUP */
+.popup-carrito {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  text-align: center;
+  display: none;
+  z-index: 9999;
+  width: 320px;
+}
+
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-popup {
+  background: #6b9c6a;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.btn-popup:hover {
+  background: #426e4b;
+}
+
+    </style>
+
   </head>
 
   <body>
-    <header>
-      <h1>Productos 3D</h1>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="./productos.html">Productos</a></li>
-          <li><a href="./carrito.html">Carrito</a></li>
-          <li><a href="./contacto.html">Contacto</a></li>
-        </ul>
+
+    
+    <header class="header">
+      <nav class="navbar">
+        <a href="index.html" class="logo" aria-label="3uilD - Inicio">
+          3<span>u</span>ilD
+        </a>
+  
+        <div class="nav-links">
+          <a href="../index.html" class="active">Inicio</a>
+          <a href="./productos.html">Productos</a>
+          <a href="./carrito.html">Carrito</a>
+          <a href="./sobre-mi.html">Nosotros</a>
+          <a href="./login.html">Ingresar</a>
+        </div>
       </nav>
-    </header>
+    </header> 
+
+    <!-- POPPUP -->
+    <div id="popup-carrito" class="popup-carrito">
+      <p>Producto agregado al carrito</p>
+
+      <div class="popup-buttons">
+        <button class="btn-popup" onclick="cerrarPopup()">Seguir comprando</button>
+        <button class="btn-popup" onclick="window.location.href='carrito.html'">Ir al carrito</button>
+      </div>
+    </div>
 
     <main>
-      <h2>Catálogo</h2>
+      <h2>Productos</h2>
 
-      <div id="lista-productos" class="grid-productos">
-
-      </div>
-
-
+      <section id="productos"></section>
     </main>
 
-    <footer>
-      <p>© 2026 Tienda 3D</p>
-    </footer>
+    
+  <footer class="footer">
+    <div class="footer-logo">3<span>u</span>ilD</div>
+    <p>Impresiones 3D que toman forma.</p>
+    <p class="copyright">© 2026 3uilD · Todos los derechos reservados</p>
+  </footer>
+
 
     <script>
-
-      //creo un arreglo de productos 
-
       const productos = [
         {
           id: 1,
-          nombre: "Llaveros Hexagonales 3D",
-          precio: 2500,
-          imagen: "../assets/images/porta_llave.jfif",
+          nombre: "Maceta Groot",
+          imagen: "../assets/images/maceta1.jpeg",
+          precio: 100,
         },
         {
           id: 2,
-          nombre: "Macetas Figuritas 3D",
-          precio: 6000,
-          imagen: "../assets/images/maceta_groot.jpeg",
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta2.jpeg",
+          precio: 100,
         },
         {
           id: 3,
-          nombre: "Perritos Balloon 3D",
-          precio: 8500,
-          imagen: "../assets/images/perro.jfif",
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta3.jpeg",
+          precio: 100,
         },
         {
           id: 4,
-          nombre: "Organizador Cápsulas Café",
-          precio: 7000,
-          imagen: "../assets/images/porta_capsula.jfif",
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta4.jpeg",
+          precio: 100,
         },
         {
           id: 5,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },{
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta5.jpeg",
+          precio: 100,
+        },
+        {
           id: 6,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },{
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta6.jpeg",
+          precio: 100,
+        },
+        {
           id: 7,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },{
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta7.jpeg",
+          precio: 100,
+        },
+        {
           id: 8,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },{
-          id: 9,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
+          nombre: "Maceta",
+          imagen: "../assets/images/maceta8.jpeg",
+          precio: 100,
         },
-        {
-            id: 10,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },
-        {
-          id: 11,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },
-        {
-            id: 12,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },
-        {
-          id: 13,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },
-        {
-          id: 14,
-          nombre: "Organizador Mario Bros",
-          precio: 9000,
-          imagen: "../assets/images/maceta_pareja.jfif",
-        },
+
       ];
 
-      //tengo que imitar lo que tengo en html para crear el productoCard
+      // guardamos la cantidad seleccionada de cada producto, por id
+      const cantidades = {};
+      productos.forEach((p) => (cantidades[p.id] = 1));
 
-      /*
-<div class="producto-card">
-          <img
-            src="../assets/images/maceta_pareja.jfif"
-            alt="Maceta pareja 3D"
-          />
-          <h3>Organizador Mario Bros</h3>
-          <p>$9000</p>
-          <button onclick="agregarAlCarrito(5)">Agregar al carrito</button>
-        </div>
-*/
+      const section = document.getElementById("productos");
 
+      for (let i = 0; i < productos.length; i++) {
+        const product = productos[i];
 
-// lo traje de bd 
+        const div = document.createElement("div");
+        div.classList.add("cont-prod");
 
-//tengo una lista de proeductos
-
-
-
-
-      productos.forEach((producto) => {
-        const productoCard = document.createElement("div");
-        productoCard.classList.add("producto-card");
-
+        const imgWrap = document.createElement("div");
+        imgWrap.classList.add("img-wrap");
         const img = document.createElement("img");
-        img.src = producto.imagen;
-        img.alt = producto.nombre;
+        img.src = product.imagen;
+        img.alt = product.nombre;
+        imgWrap.appendChild(img);
 
         const h3 = document.createElement("h3");
-        h3.textContent = producto.nombre;
+        h3.classList.add("nombre-prod");
+        h3.textContent = product.nombre;
 
-        const p = document.createElement("p");
-        p.textContent = producto.precio;
+        const precioWrap = document.createElement("div");
+        precioWrap.classList.add("precio-wrap");
+        precioWrap.innerHTML = `<span class="label">Precio</span> <span class="precio">$${product.precio}</span>`;
+
+        // --- selector de cantidad ---
+        const cantidadWrap = document.createElement("div");
+        cantidadWrap.classList.add("cantidad-wrap");
+
+        const btnMenos = document.createElement("button");
+        btnMenos.classList.add("btn-cantidad");
+        btnMenos.textContent = "-";
+
+        const spanCantidad = document.createElement("span");
+        spanCantidad.classList.add("cantidad-num");
+        spanCantidad.textContent = cantidades[product.id];
+
+        const btnMas = document.createElement("button");
+        btnMas.classList.add("btn-cantidad");
+        btnMas.textContent = "+";
+
+        btnMenos.onclick = () => {
+          if (cantidades[product.id] > 1) {
+            cantidades[product.id]--;
+            spanCantidad.textContent = cantidades[product.id];
+          }
+        };
+
+        btnMas.onclick = () => {
+          cantidades[product.id]++;
+          spanCantidad.textContent = cantidades[product.id];
+        };
+
+        cantidadWrap.appendChild(btnMenos);
+        cantidadWrap.appendChild(spanCantidad);
+        cantidadWrap.appendChild(btnMas);
+        // --- fin selector de cantidad ---
 
         const button = document.createElement("button");
+        button.classList.add("btn-carrito");
         button.textContent = "Agregar al carrito";
-        button.onclick = () => agregarAlCarrito(producto.id);
-        //tengo que imitar lo que tengo en html para crear el productoCard
-        //los agrego al productoCard
-        productoCard.appendChild(img);
-        productoCard.appendChild(h3);
-        productoCard.appendChild(p);
-        productoCard.appendChild(button);
+        button.onclick = () =>
+          agregarCarrito(product.id, cantidades[product.id]);
 
-        //agrego c/u de los productoCard al div lista-productos
-        document.getElementById("lista-productos").appendChild(productoCard);
-      });
+        div.appendChild(imgWrap);
+        div.appendChild(h3);
+        div.appendChild(precioWrap);
+        div.appendChild(cantidadWrap);
+        div.appendChild(button);
+        section.appendChild(div);
+      }
 
+      function agregarCarrito(id, cantidad) {
+        console.log(`Producto ${id} - Cantidad: ${cantidad}`);
+      }
 
+      function agregarCarrito(id) {
+        document.getElementById("popup-carrito").style.display = "block";
+       }
 
-      listaProductos.innerHTML = productos.map(producto => ` 
-        <div class="producto-card">
-          <img src="${producto.imagen}" alt="${producto.nombre}">
-          <h3>${producto.nombre}</h3>
-          <p>${producto.precio}</p>
-          <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
-        </div>
-      `).join("");
-
-
-      /*
-      //otra forma mas facil de hacerlo es usando el innerHTML
-      const listaProductos = document.getElementById("lista-productos"); //traigo el div lista-productos, el que tiene todos
+       function mostrarPopup() {
+        document.getElementById("popup-carrito").style.display = "block";
+      }
 
 
-      //map es para recorrer el array productos y crear un nuevo array con los productos
-      listaProductos.innerHTML = productos.map(producto => ` 
-        <div class="producto-card">
-          <img src="${producto.imagen}" alt="${producto.nombre}">
-          <h3>${producto.nombre}</h3>
-          <p>${producto.precio}</p>
-          <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
-        </div>
-      `).join("");
-      //join("") es para unir todos los productos en un solo string
-*/
-
-      function agregarAlCarrito(id) {
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || []; 
-        //traigo el carrito del localStorage, si no existe, creo un array vacio
-        //JSON.parse es para convertir el string del localStorage a un array
-        //|| [] es para que si no existe, creo un array vacio
-
-        const producto = productos.find(prod => prod.id === id);
-        //find es para buscar el producto en el array productos
-
-        //tengo que verificar si el carrito esta vacio
-        if(carrito.length === 0){
-      carrito.push(producto)
-        } else{
-          carrito.find(prod => prod.id === id) ? prod.cantidad++ : carrito.push(producto);
-          }
-          //si esta vacio, agrego directamente el producto al carrito
-
-          //si no esta vacio, verifico si el producto ya esta en el carrito
-          //si llega a estar en el carrito, incremento la cantidad
-          //si no esta en el carrito, agrego el producto al carrito
 
 
-          localStorage.setItem("carrito", JSON.stringify(carrito));
-          //setItem es para guardar el carrito en el localStorage
-          //JSON.stringify es para convertir el array a un string
 
 
-          alert(`${producto.nombre} agregado al carrito`);
-          console.log(carrito);
-        }
+
+
+      
+
+      function cerrarPopup() {
+        document.getElementById("popup-carrito").style.display = "none";
+      }
+
+
+
+
+      
+
     </script>
   </body>
 </html>

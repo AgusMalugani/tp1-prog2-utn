@@ -1,0 +1,160 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+</style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #e2d3b2;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+#productos {
+  display: grid;
+  grid-template-columns: repeat(4, 400px);
+  justify-content: center;
+  gap: 24px;
+  padding: 32px;
+}
+
+.cont-prod {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.cont-prod:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.img-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cont-prod:hover .img-wrap img {
+  transform: scale(1.1);
+}
+
+.nombre-prod {
+  font-size: 20px;
+  margin: 20px 0;
+  color: #222;
+}
+
+.precio-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.precio-wrap .label {
+  font-size: 18px;
+  color: #888;
+}
+
+.precio-wrap .precio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6b5d3f;
+}
+
+.btn-carrito {
+  background: #6b9c6a;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.btn-carrito:hover {
+  background: #426e4b;
+}
+
+.btn-carrito:active {
+  transform: scale(0.96);
+}
+
+.cantidad-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.btn-cantidad {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-cantidad:hover {
+  background: #e0e0e0;
+}
+
+.btn-cantidad:active {
+  transform: scale(0.9);
+}
+
+.cantidad-num {
+  min-width: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #6b5d3f;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/register.style.css">
+</head>
+<body>
+    
+
+
+    <header class="header">
+        <nav class="navbar">
+          <a href="index.html" class="logo" aria-label="3uilD - Inicio">
+            3<span>u</span>ilD
+          </a>
+    
+          <div class="nav-links">
+            <a href="../index.html" class="active">Inicio</a>
+            <a href="./productos.html">Productos</a>
+            <a href="./carrito.html">Carrito</a>
+            <a href="./sobre-mi.html">Nosotros</a>
+            <a href="./login.html">Ingresar</a>
+          </div>
+        </nav>
+      </header>
+
+
+    <main>
+        <section>
+            <br>
+            <h2>Completa las areas especificadas</h2>
+            <form action="" id="registro">
+                <input type="text" id="nombre" placeholder="Nombre Completo">
+                <p id="mensajeNombre"></p>
+                <input type="text" id="apellido" placeholder="Apellido">
+                <p id="mensajeApellido"></p>
+                <input type="tel" id="telefono" placeholder="N⁰ de Telefono">
+                <p id="mensajeTelefono"></p>
+                <input type="date" placeholder="Fecha de Nacimiento">
+                
+                <input type="email" id="correo" placeholder="Correo Electronico">
+                <p id="mensajeCorreo"></p>
+                <input type="email" id="confCorreo" placeholder="Confirmar Correo Electronico">
+                <p id="msjConfCorreo"></p>
+                <input type="password" id="passWord" placeholder="Contraseña">
+                <p id="mensajePassword"></p>
+                <input type="password" id="confPass" placeholder="Confirmar Contraseña">
+                <p id="msjConfPass"></p>
+                <input type="submit" value="Registrarse Ahora">
+            </form>
+        </section>
+        <section>
+            <h2>¿Ya tenes una cuenta registrada?</h2>
+            Inicia sesion <a href="../views/login.html"> aca</a>
+        </section>
+    </main>
+    
+    
+  <footer class="footer">
+    <div class="footer-logo">3<span>u</span>ilD</div>
+    <p>Impresiones 3D que toman forma.</p>
+    <p class="copyright">© 2026 3uilD · Todos los derechos reservados</p>
+  </footer>
+
+
+    <script>
+        document.getElementById("registro").addEventListener("submit", function(event){
+        event.preventDefault()
+        const nombre= document.getElementById("nombre").value
+        const mensaje1= document.getElementById("mensajeNombre")
+        const apellido= document.getElementById("apellido").value
+        const mensaje2= document.getElementById("mensajeApellido")
+        const telefono= document.getElementById("telefono")
+        const valorTelefono= telefono.value
+        const mensaje3= document.getElementById("mensajeTelefono")
+        /*const fecha= document.getElementById("fecha").value
+        const mensaje4= document.getElementById("mensajeFecha")*/
+        /*-------------------------------------------------------------------------------------------------*/
+        const correo= document.getElementById("correo").value
+        const confCorreo= document.getElementById("confCorreo").value
+        const mensaje5= document.getElementById("mensajeCorreo")
+        const mensaje6= document.getElementById("msjConfCorreo")
+        /*-------------------------------------------------------------------------------------------------*/
+        const passWord= document.getElementById("passWord").value
+        const confPass= document.getElementById("confPass").value
+        const mensaje7= document.getElementById("mensajePassword")
+        const mensaje8= document.getElementById("msjConfPass")
+        /*-------------------------------------------------------------------------------------------------*/
+        if(nombre.trim()===""){
+            mensaje1.textContent="El nombre no puede estar vacio"
+            mensaje1.style.color="red"
+        }else{
+            mensaje1.textContent="✓"
+            mensaje1.style.color="green"  
+        }
+        if(apellido.trim()===""){
+            mensaje2.textContent="El apellido no puede estar vacio"
+            mensaje2.style.color="red"
+        }else{
+            mensaje2.textContent="✓"
+            mensaje2.style.color="green"  
+        }
+        if(valorTelefono.trim()===""){
+            mensaje3.textContent="El telefono no puede estar vacio"
+            mensaje3.style.color="red"
+        }else if(valorTelefono.length < 10){
+            mensaje3.textContent="El telefono no debe ser menor de 10 digitos"
+            mensaje3.style.color="red"
+        }else{
+            mensaje3.textContent="✓"
+            mensaje3.style.color="green"  
+        }
+        /*-------------------------------------------------------------------------------------------------*/
+        if(correo.trim()===""){
+            mensaje5.textContent="El correo no puede estar vacio"
+            mensaje5.style.color="red"
+        }else{
+            mensaje5.textContent="✓"
+            mensaje5.style.color="green"
+        }
+        if(confCorreo.trim()===""){
+            mensaje6.textContent="Esta vacio, tienes que confirmar tu correo"
+            mensaje6.style.color="red"
+        }else if(confCorreo !== correo){
+            mensaje6.textContent="Este correo no coincide con el anterior"
+            mensaje6.style.color="red"
+        }else{
+            mensaje6.textContent="✓"
+            mensaje6.style.color="green"
+        }
+        /*-------------------------------------------------------------------------------------------------*/
+        if(passWord.trim()===""){
+            mensaje7.textContent="La contraseña no puede estar vacio"
+            mensaje7.style.color="red"
+        }else{
+            mensaje7.textContent="✓"
+            mensaje7.style.color="green"
+        }
+        if(confPass.trim()===""){
+            mensaje8.textContent="Esta vacio, tienes que confirmar tu contraseña"
+            mensaje8.style.color="red"
+        }else if(confPass !== passWord){
+            mensaje8.textContent="Esta contraseña no coincide con el anterior"
+            mensaje8.style.color="red"
+        }else{
+            mensaje8.textContent="✓"
+            mensaje8.style.color="green"
+        }
+        /*-------------------------------------------------------------------------------------------------*/
+
+        const usuarios= JSON.parse(localStorage.getItem("users")) || []
+        if (usuarios.length === 0) {
+        console.log("No hay usuarios registrados. Creando el primer registro...");
+        }
+        // Aquí puedes hacer algo específico, como agregar un usuario administrador
+
+        /*hacer validacion de los datos*/
+        usuarios.push({ nombre: nombre, apellido: apellido, valorTelefono: valorTelefono, correo: correo, password: password});
+
+        localStorage.setItem("users", JSON.stringify(usuarios));
+
+        })
+    </script>
+</body>
+</html>
