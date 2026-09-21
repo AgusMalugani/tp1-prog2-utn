@@ -1,65 +1,83 @@
-#  Nombre de tu Proyecto (Ej: 3builD)
+# 3uilD
 
-##  ¿Qué es este proyecto?
+## ¿Qué es este proyecto?
 
-Ejemplo: Este es un sitio web interactivo desarrollado desde cero para exhibir un catálogo de impresiones 3d, es un proyecto para el tp1 de prog2 utn. Permite a los usuarios navegar por diferentes vistas de manera rápida, utilizando una estructura limpia de HTML, CSS y JavaScript nativo.
+**3uilD** es un sitio web desarrollado desde cero para exhibir y vender un catálogo de impresiones 3D. Es el trabajo práctico 1 (TP1) de Programación 2 (UTN).
 
-##  Tecnologías Utilizadas
+Permite navegar entre distintas vistas (inicio, productos, carrito, nosotros, login y registro) con una estructura limpia de HTML, CSS y JavaScript nativo, sin frameworks.
+
+## Tecnologías utilizadas
 
 - **HTML:** Living Standard.
 - **CSS:** CSS Baseline 2026.
-- **JavaScript:** ES2026 .
+- **JavaScript:** ES2026 (Vanilla JS, sin frameworks).
 
-##  Estructura del proyecto
+## Estructura del proyecto
 
 ```text
 tp1-prog2-utn/
 ├── index.html
-├── views/
-│   ├── catalogo.html
-│   └── contacto.html
+├── style.css
+├── favicon.ico
+├── README.md
+├── .gitignore
+├── assets/
+│   └── images/
+│       ├── maceta_groot.jpeg
+│       ├── maceta_pareja.jfif
+│       ├── perro.jfif
+│       ├── porta_capsula.jfif
+│       ├── porta_lapices.jfif
+│       └── porta_llave.jfif
 ├── css/
-│   ├── global.css
-│   ├── index.css
-│   └── catalogo.css
+│   ├── product.css
+│   └── sobre-mi.style.css
 ├── js/
-│   ├── main.js
-│   └── catalogo.js
-└── assets/
-    └── images/
-        ├── maceta_groot.jpeg
-        └── maceta_pareja.jfif
+│   ├── app.js
+│   └── sobre-mi.js
+└── views/
+    ├── carrito.html
+    ├── login.html
+    ├── productos.html
+    ├── register.html
+    └── sobre-mi.html
 ```
 
 ### Descripción
 
 | Directorio / Archivo | Descripción |
 |---|---|
-| `index.html` | Página principal del sitio. |
-| `views/` | Contiene las páginas HTML secundarias. |
-| `css/` | Contiene las hojas de estilo del proyecto. |
-| `css/global.css` | Estilos compartidos por todo el sitio. |
-| `css/index.css` | Estilos específicos de la página principal. |
-| `css/catalogo.css` | Estilos específicos del catálogo. |
-| `js/` | Contiene los scripts JavaScript. |
-| `js/main.js` | Lógica y funcionalidades generales del sitio. |
-| `js/catalogo.js` | Lógica específica del catálogo, como filtros y búsqueda. |
-| `assets/images/` | Imágenes y recursos visuales utilizados por el sitio. |
+| `index.html` | Página principal del sitio (inicio / hero). |
+| `style.css` | Estilos globales compartidos por el sitio. |
+| `favicon.ico` | Ícono del sitio. |
+| `views/` | Páginas HTML secundarias. |
+| `views/productos.html` | Catálogo de productos impresos en 3D. |
+| `views/carrito.html` | Vista del carrito de compras. |
+| `views/sobre-mi.html` | Página institucional / sobre el equipo. |
+| `views/login.html` | Vista de inicio de sesión. |
+| `views/register.html` | Vista de registro de usuario. |
+| `css/` | Hojas de estilo específicas por vista. |
+| `css/product.css` | Estilos del catálogo de productos. |
+| `css/sobre-mi.style.css` | Estilos de la página Nosotros. |
+| `js/` | Scripts JavaScript del proyecto. |
+| `js/app.js` | Lógica general (por ejemplo, carrito). |
+| `js/sobre-mi.js` | Lógica específica de la página Nosotros. |
+| `assets/images/` | Imágenes de productos y recursos visuales. |
 
-##  Cómo clonar y visualizar el proyecto
+## Cómo clonar y visualizar el proyecto
 
 ### 1. Clonar el repositorio
 
 Para obtener una copia local del proyecto, abrí tu terminal y ejecutá:
 
 ```bash
-git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+git clone https://github.com/tu-usuario/tp1-prog2-utn.git
 ```
 
 Luego ingresá a la carpeta:
 
 ```bash
-cd nombre-del-repositorio
+cd tp1-prog2-utn
 ```
 
 ### 2. Visualizar en el navegador
@@ -88,7 +106,7 @@ Esto permite:
 - Recargar automáticamente la página al guardar cambios.
 - Evitar problemas relacionados con rutas o recursos locales.
 
-##  Manejo de Ramas en Git
+## Manejo de ramas en Git
 
 El proyecto sigue un flujo de trabajo organizado para el desarrollo colaborativo mediante las siguientes ramas:
 
@@ -112,7 +130,7 @@ Son las ramas utilizadas por cada desarrollador para implementar nuevas funciona
 
 Todas las ramas `feature/*` deben crearse a partir de `develop`.
 
-##  Flujo de trabajo habitual
+## Flujo de trabajo habitual
 
 ### 1. Posicionarse en `develop`
 
@@ -181,4 +199,3 @@ develop
 ```
 
 La rama `main` representa la versión estable del proyecto.
-
