@@ -1,45 +1,59 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tienda 3D - Productos</title>
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../css/product.css" />
-  </head>
 
-  <body>
-    <header class="header">
-      <nav class="navbar">
-        <a href="index.html" class="logo" aria-label="3uilD - Inicio">
-          3<span>u</span>ilD
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda 3D - Productos</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../css/product.css" />
+</head>
 
-        <div class="nav-links">
-          <a href="../index.html">Inicio</a>
-          <a href="./productos.html" class="active">Productos</a>
-          <a href="./carrito.html">Carrito</a>
-          <a href="./sobre-mi.html">Nosotros</a>
-          <a href="./login.html">Ingresar</a>
-        </div>
-      </nav>
-    </header>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo" aria-label="3uilD - Inicio">
+        3<span>u</span>ilD
+      </a>
 
-    <main>
-      <h2>Productos</h2>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="./productos.html" class="active">Productos</a>
+        <a href="./carrito.html">Carrito</a>
+        <a href="./sobre-mi.html">Nosotros</a>
+        <a href="./login.html">Ingresar</a>
+      </div>
+    </nav>
+  </header>
 
-      <section id="productos"></section>
-    </main>
+  <main>
+    <h2>Productos</h2>
 
-    <footer class="footer">
-      <div class="footer-logo">3<span>u</span>ilD</div>
-      <p>Impresiones 3D que toman forma.</p>
-      <p class="copyright">© 2026 3uilD · Todos los derechos reservados</p>
-    </footer>
+    <section id="productos"></section>
+  </main>
 
-    <script src="../js/products-data.js"></script>
+  <footer class="footer">
+    <div class="footer-logo">3<span>u</span>ilD</div>
+    <p>Impresiones 3D que toman forma.</p>
+    <p class="copyright">© 2026 3uilD · Todos los derechos reservados</p>
+  </footer>
 
-    <script src="../js/products.js">
-    </script>
-  </body>
+  <script src="../js/products-data.js"></script>
+
+  <script src="../js/products.js">
+  </script>
+  <!-- POPUP -->
+  <div id="popup-carrito" class="popup-carrito" style="display:none;">
+    <p>Producto agregado al carrito</p>
+
+    <div class="popup-buttons">
+      <button class="btn-popup" onclick="cerrarPopup()">Seguir comprando</button>
+      <button class="btn-popup" onclick="window.location.href='carrito.html'">Ir al carrito</button>
+    </div>
+  </div>
+
+
+
+</body>
+
 </html>

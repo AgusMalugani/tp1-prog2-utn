@@ -3,52 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3uilD | Carrito</title>
+  <title>Carrito - Tienda 3D</title>
+
   <link rel="stylesheet" href="../style.css">
-  <link rel="icon" type="image/svg+xml" href="https://static.vecteezy.com/system/resources/previews/057/961/567/non_2x/elegant-3d-printing-icon-with-3d-printer-and-object-vector.jpg">
+  <link rel="stylesheet" href="../css/carrito.css">
 </head>
 
 <body>
-  
-  
-  
-  <header class="header">
-    <nav class="navbar">
-      <a href="../index.html" class="logo" aria-label="3uilD - Inicio">
-        3<span>u</span>ilD
-      </a>
 
-      <div class="nav-links">
-        <a href="../index.html" >Inicio</a>
-        <a href="./productos.html">Productos</a>
-        <a href="./carrito.html" class="active">Carrito</a>
-        <a href="./sobre-mi.html">Nosotros</a>
-        <a href="./login.html">Ingresar</a>
+<header class="header">
+  <nav class="navbar">
+    <a href="../index.html" class="logo">3<span>u</span>ilD</a>
+
+    <div class="nav-links">
+      <a href="../index.html">Inicio</a>
+      <a href="./productos.html">Productos</a>
+      <a href="./carrito.html" class="active">Carrito</a>
+      <a href="./sobre-mi.html">Nosotros</a>
+      <a href="./login.html">Ingresar</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h2>Tu carrito</h2>
+
+  <div class="carrito-container">
+
+    <!-- LISTA DE PRODUCTOS -->
+    <div class="carrito-productos" id="carrito-lista">
+      <p id="carrito-vacio">El carrito está vacío.</p>
+    </div>
+
+    <!-- PANEL DE PAGO -->
+    <div class="carrito-pago">
+      <h3>Modo de pago</h3>
+
+      <!-- BOTONES DE PAGO -->
+      <div class="pago-box">
+        <button onclick="mostrarTransferencia()">
+          <img src="../assets/images/icons/banco.png" alt="Transferencia">
+          Transferencia
+        </button>
+
+        <button onclick="mostrarTarjeta()">
+          <img src="../assets/images/icons/visa.jpg" alt="Tarjeta">
+          Tarjeta
+        </button>
+
+        <button onclick="mostrarMercadoPago()">
+          <img src="../assets/images/icons/mercado-pago.png" alt="MercadoPago">
+          MercadoPago
+        </button>
+
+        <button onclick="mostrarPayPal()">
+          <img src="../assets/images/icons/paypal.png" alt="PayPal">
+          PayPal
+        </button>
       </div>
-    </nav>
-  </header>
+
+      <!-- INFO TRANSFERENCIA -->
+      <div id="info-transferencia" class="pago-box" style="display:none;">
+        <h3>Información bancaria</h3>
+        <p><strong>Alias:</strong> 3uild.mp</p>
+        <p><strong>CBU:</strong> 0000003100033333332222</p>
+        <p><strong>CUIL:</strong> 20-12345678-9</p>
+        <p><strong>Titular:</strong>3uild</p>
+      </div>
+
+      <!-- MENSAJES DE OTROS MÉTODOS -->
+      <div id="mensaje-pago" class="pago-box" style="display:none;">
+        <p id="mensaje-texto"></p>
+      </div>
+
+      <!-- QR MERCADOPAGO -->
+      <div id="qr-mp" class="pago-box" style="display:none; text-align:center;">
+        <h3>Escaneá el QR</h3>
+        <img src="../assets/images/icons/QR.png" alt="QR MercadoPago" style="width:200px;">
+      </div>
+
+      <!-- OBSERVACIONES -->
+      <div class="pago-box">
+        <h3>Observaciones</h3>
+        <textarea style="width:100%; height:80px;"></textarea>
+      </div>
+
+      <!-- TOTAL -->
+      <div class="total-box">
+        Total: $<span id="total-general">0</span>
+      </div>
+
+      <!-- BOTONES -->
+      <button class="btn-pago" onclick="mostrarPopupPago()">Pagar</button>
 
 
-  <main>
-    <h2>Tu carrito</h2>
-
-    <div id="carrito" class="carrito-container">
-      <!-- Items generados por JS -->
+      <button class="btn-pago" onclick="vaciarCarrito()" style="background:#555;">
+        Vaciar carrito
+      </button>
     </div>
 
-    <div id="total" class="total-container">
-      <!-- Total generado por JS -->
-    </div>
-  </main>
+  </div>
+</main>
 
-  
-  <footer class="footer">
-    <div class="footer-logo">3<span>u</span>ilD</div>
-    <p>Impresiones 3D que toman forma.</p>
-    <p class="copyright">© 2026 3uilD · Todos los derechos reservados</p>
-  </footer>
+<footer class="footer">
+  <div class="footer-logo">3<span>u</span>ilD</div>
+  <p>Impresiones 3D que toman forma.</p>
+  <p class="copyright">© 2026 3uilD · Todos los derechos reservados</p>
+</footer>
+<script src="../js/products-data.js"></script>
+<script src="../js/carrito.js"></script>
+
+<!-- POPUP PAGO -->
+<div id="popup-pago" class="popup-carrito" style="display:none;">
+  <p>Pestañeaste, ahora sos cartera, corre guachín</p>
+
+  <div class="popup-buttons">
+    <button class="btn-popup" onclick="cerrarPopupPago()">Cerrar</button>
+  </div>
+</div>
 
 
-  <script src="../app.js"></script>
 </body>
 </html>

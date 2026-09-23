@@ -90,6 +90,7 @@ function agregarCarrito(id, cantidad) {
     if (carrito.id === carritoLocal[i].id) {
       carritoLocal[i].cantidad = carrito.cantidad + carritoLocal[i].cantidad;
       localStorage.setItem("carritoKey", JSON.stringify(carritoLocal));
+      mostrarPopup(); // <-- popup
       return;
     }
   }
@@ -97,4 +98,16 @@ function agregarCarrito(id, cantidad) {
   carritoLocal.push(carrito);
   console.log(carritoLocal);
   localStorage.setItem("carritoKey", JSON.stringify(carritoLocal));
+  mostrarPopup(); // <-- popup
+}
+/* ---------------- POPUP ---------------- */
+
+function mostrarPopup() {
+  const popup = document.getElementById("popup-carrito");
+  popup.style.display = "block";
+}
+
+function cerrarPopup() {
+  const popup = document.getElementById("popup-carrito");
+  popup.style.display = "none";
 }
