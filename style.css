@@ -350,7 +350,7 @@ a {
 .footer {
   background: var(--dark);
   color: var(--beige);
-  padding: 55px 5%;
+  padding:  1rem;
   text-align: center;
 }
 
