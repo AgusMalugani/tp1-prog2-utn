@@ -1,16 +1,32 @@
 /* CONTENEDOR PRINCIPAL */
 .carrito-container {
   display: flex;
+  justify-content: flex-end; /* la derecha queda en el flujo y marca el alto */
+  position: relative;
   gap: 20px;
   padding: 20px;
+  margin-bottom: 60px; /* separación con el footer */
 }
 
 /* COLUMNA IZQUIERDA */
 .carrito-productos {
-  width: 60%;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  bottom: 20px;
+
+  right: calc(40% + 40px); /* 40% del pago + ~20px gap + padding */
+  width: auto;
+
+  
   background: #f5f5f5;
   padding: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   border-radius: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .item-carrito {
@@ -50,6 +66,10 @@
   background: #f5f5f5;
   padding: 15px;
   border-radius: 10px;
+  box-sizing: border-box;
+  overflow: visible;
+
+
 }
 
 .pago-box {

@@ -24,7 +24,7 @@ section h2 {
 }
 
 #sectionQuienesSomos img {
-  width: min(100%, 500px) ;
+  width: min(100%, 700px) ;
   margin: 10px auto 25px;
   border-radius: 12px;
   display: block;
@@ -76,7 +76,7 @@ section h2 {
 
 #sectionEquipoTrabajo img {
   border-radius: 50%;
-   width: 100px; 
+   width: 150px; 
    margin: 20px"
 }
 
