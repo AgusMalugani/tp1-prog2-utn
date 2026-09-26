@@ -163,3 +163,71 @@
 .btn-popup:hover {
   background: #4a3f2a;
 }
+
+/* --- RESPONSIVE CARRITO --- */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 900px) {
+  .carrito-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .carrito-productos,
+  .carrito-pago {
+    position: static;
+    width: 100%;
+    right: auto;
+    left: auto;
+    top: auto;
+    bottom: auto;
+  }
+
+  .item-carrito {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .item-carrito img {
+    width: 160px;
+    height: auto;
+    margin: 0 auto 10px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .item-carrito {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .item-carrito img {
+    width: 130px;
+  }
+
+  .item-info h3 {
+    font-size: 18px;
+  }
+
+  .cantidad-control {
+    gap: 10px;
+  }
+
+  .cantidad-control button {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .carrito-pago {
+    padding: 15px;
+  }
+
+  .btn-pago {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
