@@ -10,7 +10,7 @@ Permite navegar entre distintas vistas (inicio, productos, carrito, nosotros, lo
 
 - **HTML:** Living Standard.
 - **CSS:** CSS Baseline 2026.
-- **JavaScript:** ES2026 (Vanilla JS, sin frameworks).
+- **JavaScript:** ES2026.
 
 ## Estructura del proyecto
 
@@ -71,7 +71,7 @@ tp1-prog2-utn/
 Para obtener una copia local del proyecto, abrí tu terminal y ejecutá:
 
 ```bash
-git clone https://github.com/tu-usuario/tp1-prog2-utn.git
+git clone https://github.com/AgusMalugani/tp1-prog2-utn
 ```
 
 Luego ingresá a la carpeta:
