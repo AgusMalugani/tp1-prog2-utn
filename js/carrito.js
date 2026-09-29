@@ -112,7 +112,7 @@ function mostrarPayPal() {
   const msg = document.getElementById("mensaje-pago");
   const texto = document.getElementById("mensaje-texto");
 
-  texto.textContent = "Si no tenés dólares croto";
+  texto.textContent = "Próximamente";
   msg.style.display = "block";
 }
 
